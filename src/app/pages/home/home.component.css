@@ -1,0 +1,70 @@
+.banner{
+    background-image: url('../../../assets/food.jpg');
+    height: 600px;
+    background-position: center top;
+    background-size: cover;
+}
+.go{
+    top: 30%;
+    right: 30%;
+    position: absolute;
+
+}
+.go h1{
+    color: orangered;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.go h4{
+    color: green;
+    font-size: 16px; 
+}
+ .go a{
+    text-decoration: none;
+    background-color: rgb(255, 195, 161);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 18px;
+} 
+
+
+.go a:hover{
+    background-color: orange;
+    color: white;
+}
+
+.reg a:hover{
+    background-color: orange;
+    color: white;
+}
+
+.viewmorebtn{
+ text-decoration: none;
+ background-color: black;
+ color: white;
+ padding: 5px 8px;
+ border-radius: 5px;
+ font-size: 14px;
+}
+
+.stepBox
+{
+  background-color: blanchedalmond;
+  padding: 10px 10px;
+  text-align: center;
+}
+
+.stepBox h1
+{
+    font-size: 30px;
+    font-weight: bold;
+  color: orangered;
+}
+
+.stepBox p
+{
+    font-size: 20px;
+  color: black;
+}
+
