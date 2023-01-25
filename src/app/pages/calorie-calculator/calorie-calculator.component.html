@@ -1,0 +1,117 @@
+<div class="banner text-center">
+    <img src='../../../assets/healthylife.PNG'  >
+</div>
+<div class="container"> 
+
+<form [formGroup]="registerForm" (ngSubmit)="calculateData()" class="border p-4 rounded-3">
+
+   <div class="row g-0">
+    <div class="col text-center p-2 mb-3 bg-light">
+        <span class="fs-3">Calculate Your Daily Calories</span>
+     </div>
+   </div> 
+   
+   <div class="row">
+       <div class="col mb-3">
+        <label for="weight" class="form-label">Weight</label>
+        <input type="text" class="form-control " id="weight"
+        name="weight" [(ngModel)]="calculate.weight" formControlName="weight">
+        <div class="form-text text-danger" *ngIf="weight.errors?.['required'] && weight.touched">
+            Field is required
+        </div>
+        <div class="form-text text-danger" *ngIf="weight.errors?.['pattern']">
+            Field is invalid
+        </div>
+    </div>
+
+    <div class="col mb-3">
+      <label for="height" class="form-label">Height</label>
+      <input type="text" class="form-control " id="height"
+      name="height" [(ngModel)]="calculate.height" formControlName="height">
+      <div class="form-text text-danger" *ngIf="height.errors?.['required'] && height.touched">
+        Field is required
+    </div>
+    <div class="form-text text-danger" *ngIf="height.errors?.['pattern']">
+        Field is invalid
+    </div>
+   </div>
+   </div>
+
+   <div class="row">
+    <div class="col mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="text" class="form-control " id="age" name="age" [(ngModel)]="calculate.age" formControlName="age">
+        <div class="form-text text-danger" *ngIf="age.errors?.['required'] && age.touched">
+            Field is required
+        </div>
+        <div class="form-text text-danger" *ngIf="age.errors?.['pattern']">
+            Field is invalid
+        </div>
+    </div>
+
+    <div class="col ps-3 mb-3">
+        <div class="m-1">Gender</div>
+        
+        <div class="form-check form-check-inline">
+         <input type="radio" class="form-check-input" value="m" id="male"
+         name="gender" [(ngModel)]="calculate.gender" >
+         <label class="form-check-label" for="male">Male</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" value="f" id="female"
+            name="gender" [(ngModel)]="calculate.gender" >
+            <label class="form-check-label" for="female">Female</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col mb-3" >
+        <div class="m-1">Daily activity level</div>
+        
+        <div class="form-check form-check-inline">
+         <input type="radio" class="form-check-input" value="0" id="lightexercise"
+         name="exercise" [(ngModel)]="calculate.exercise" >
+         <label class="form-check-label" for="lightexercise">Lightly active</label>
+        </div>
+
+        <div class="form-check ">
+            <input type="radio" class="form-check-input" value="1" id="moderateexercise"
+            name="exercise" [(ngModel)]="calculate.exercise" >
+            <label class="form-check-label" for="moderateexercise">Moderate active</label>
+        </div>
+
+        <div class="form-check ">
+            <input type="radio" class="form-check-input" value="2" id="activeexercise"
+            name="exercise" [(ngModel)]="calculate.exercise" >
+            <label class="form-check-label" for="activeexercise">Active</label>
+        </div>
+
+        <div class="form-check ">
+            <input type="radio" class="form-check-input" value="3" id="highexercise"
+            name="exercise" [(ngModel)]="calculate.exercise" >
+            <label class="form-check-label" for="highexercise">Very Active</label>
+        </div>
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="d-grid">
+                <button  (click)="total()" type="submit" class="btn btn-outline-success">Calculate</button>
+
+            </div>
+
+        </div>
+    </div>
+   </div>
+   <br>
+  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Your daily calorie is {{result}}.</strong> This is your Active Metabolic Rate.
+</div>
+
+</form>
+
+</div>
+
